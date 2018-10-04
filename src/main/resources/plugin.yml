@@ -1,0 +1,7 @@
+main: com.diamonddagger590.com.diamonddagger590.caa.main.Main
+version: 1.1.3
+name: CrazyAuctionsAnnouncer
+depend: [CrazyAuctions]
+commands:
+  caa:
+    description: The main command for the CrazyAuctionsAnnouncer Plugin
