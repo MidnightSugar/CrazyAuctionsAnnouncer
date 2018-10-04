@@ -1,10 +1,11 @@
 package com.diamonddagger590.caa.util;
 
 import com.diamonddagger590.caa.discordsrv.DiscordSRVManager;
-import com.diamonddagger590.caa.main.Main;
+import com.diamonddagger590.caa.main.CrazyAuctionsAnnouncer;
 import com.diamonddagger590.caa.minecord.MineCordHandler;
 import com.diamonddagger590.caa.uchat.UChatHandler;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 
@@ -23,7 +24,7 @@ public class Methods {
 	}
 
 	public static String translateMessage(String message, Player p, long bid, int amount, String itemType, String aucType, String displayName) {
-		for(String s : Main.getListHandler().getConfig().getConfigurationSection("Settings.BannedDisplayNameWords").getKeys(false)){
+		for(String s : CrazyAuctionsAnnouncer.getConfigFile().getConfigurationSection("Settings.BannedDisplayNameWords").getKeys(false)){
 			if(message.contains(s)){
 				message = message.replace("s", "***");
 			}
@@ -66,5 +67,10 @@ public class Methods {
 		}
 		return itemType;
 	}
-	
+
+  public static String color(String msg){
+	return ChatColor.translateAlternateColorCodes('&', msg);
+  }
+
+
 }

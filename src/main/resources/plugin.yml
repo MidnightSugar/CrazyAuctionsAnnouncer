@@ -1,6 +1,7 @@
 main: com.diamonddagger590.com.diamonddagger590.caa.main.Main
 version: 1.1.3
 name: CrazyAuctionsAnnouncer
+api-version: 1.13
 depend: [CrazyAuctions]
 commands:
   caa:
