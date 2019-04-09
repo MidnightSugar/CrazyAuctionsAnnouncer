@@ -15,9 +15,10 @@ public class Methods {
 		if(Bukkit.getPluginManager().isPluginEnabled("MineCordBot")){
 			MineCordHandler.sendMessage(channel, discordMessage);
 		}
+		/*
 		else if(Bukkit.getPluginManager().isPluginEnabled("UChat") || Bukkit.getPluginManager().isPluginEnabled("UltimateChat")){
 			UChatHandler.sendMessage(channel, discordMessage);
-		}
+		}*/
 		else if(Bukkit.getPluginManager().isPluginEnabled("DiscordSRV")) {
 			DiscordSRVManager.sendMessage(channel, discordMessage);
 		}
