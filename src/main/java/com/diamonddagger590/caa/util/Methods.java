@@ -25,9 +25,14 @@ public class Methods {
 	}
 
 	public static String translateMessage(String message, Player p, long bid, int amount, String itemType, String aucType, String displayName) {
-		for(String s : CrazyAuctionsAnnouncer.getConfigFile().getConfigurationSection("Settings.BannedDisplayNameWords").getKeys(false)){
-			if(message.contains(s)){
-				message = message.replace("s", "***");
+		if(displayName == null){
+			displayName = "";
+		}
+		if(!displayName.equalsIgnoreCase("") && CrazyAuctionsAnnouncer.getConfigFile().contains("Settings.BannedDisplayNameWords")) {
+			for(String s : CrazyAuctionsAnnouncer.getConfigFile().getConfigurationSection("Settings.BannedDisplayNameWords").getKeys(false)) {
+				if(message.contains(s)) {
+					message = message.replace("s", "***");
+				}
 			}
 		}
 		return message.replace("%Player%", p.getDisplayName()).replace("%Money%", Long.toString(bid)).replace("%Amount%", Integer.toString(amount)).replace("%Item%", itemType)
