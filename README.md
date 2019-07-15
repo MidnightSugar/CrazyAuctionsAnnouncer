@@ -1,2 +1,2 @@
 # CrazyAuctionsAnnouncer
-An announcer plugin for the Crazy Auctions plugin
+An announcer plugin for the Crazy Auctions plugin.
