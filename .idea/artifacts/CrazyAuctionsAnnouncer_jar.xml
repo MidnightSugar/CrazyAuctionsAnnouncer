@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="CrazyAuctionsAnnouncer:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/CrazyAuctionsAnnouncer_jar</output-path>
+    <root id="archive" name="CrazyAuctionsAnnouncer.jar">
+      <element id="module-output" name="CrazyAuctionsAnnouncer" />
+    </root>
+  </artifact>
+</component>

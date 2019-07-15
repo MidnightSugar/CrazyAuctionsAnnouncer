@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="Minecordbot-2.2.5">
+  <library name="Vault">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/lib/Minecordbot-2.2.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/Vault.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

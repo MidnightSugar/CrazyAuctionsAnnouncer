@@ -12,58 +12,66 @@
 #         - Players: %Player%
 #         - Items: %Item%
 #         - Money: %Money%
-#         - AuctionType: %AuctionType%
 #         - Amount: %Amount%
 #         - DisplayName: %DisplayName% (Please note that if the item does not have a display name this will return the item material instead
 # If you receive an error when CAA loads, ensure that:
 #   - No tabs are present: YAML only allows spaces
 #   - Indents are correct: YAML hierarchy is based entirely on indentation
 ###########################
-PluginPrefix: '&7[&3CrazyAuctionsAnnouncer&7]&6>>'
+PluginPrefix: ''
 Settings:
-#Set to 'Discord', 'Server', or 'Both'. Set it to Server if you do not have minecord, uchat, or DiscordSRV installed
+  #Set to 'Discord', 'Server', or 'Both'. Set it to Server if you do not have minecord, uchat, or DiscordSRV installed
   MessageSendTo: 'Server'
-#How many announcements should be allowed in each time interval
+  #How many announcements should be allowed in each time interval
   AnnouncementAmountLimit: 5
-#How often the limit should reset so more announcements can be made (time is in minutes)
+  #How often the limit should reset so more announcements can be made (time is in minutes)
   LimiterRefreshTime: 1
-#turn to true to enable the Limiter
+  #turn to true to enable the Limiter
   UseAnnouncementLimit: false
-#Words banned from the Display Name
+  #Words banned from the Display Name
   BannedDisplayNameWords:
     - 'BadBones69'
+  #Makes it so the item can be seen when hovering over the item
+  ItemHover: true
 #All server messages
 Messages:
   ConfigReloaded: '&aConfig has been reloaded'
   NoPerms: '&cYou do not have permission to run this command'
   InvalidCommand: '&cThe command you entered was invalid'
-  AuctionBid: '&e%Player% has bid $%Money% on %Amount% %Item%'
-  AuctionWin: '&e%Player% has bought the auction of %Amount% %Item% (%DisplayName%) for $%Money%'
-  AuctionStart: '&e%Player% has started a %AuctionType% for %Amount% %Item% (%DisplayName%) for $%Money%'
-  AuctionWinBid: '&e%Player% has won the bid for %Amount% %Item% for $%Money%'
+  AuctionSell: '&6%Player% &eis selling %Amount% %Item% &efor &6%Money%&e.'
+  AuctionBuy: '&6%Player% &ehas bought %Amount% %Item% &efor &6%Money%&e.'
+  AuctionStartBid: '&6%Player% &eis auctioning %Amount% %Item% &efor &6%Money%&e.'
+  AuctionBid: '&6%Player% &ehas bid %Money% on %Amount% %Item%&e.'
+  AuctionWinBid: '&6%Player% &ehas won the bid for %Amount% %Item% &efor &6%Money%&e.'
 Server:
-##Can be message. title, subtitle, or action_bar
+  ##Can be message. title, subtitle, or action_bar
   DisplayType:
-    AuctionBid: 'action_bar'
-    AuctionWin: 'action_bar'
-    AuctionStart: 'action_bar'
-    AuctionWinBid: 'action_bar'
+    AuctionSell: 'message'
+    AuctionBuy: 'message'
+    AuctionStartBid: 'message'
+    AuctionBid: 'message'
+    AuctionWinBid: 'message'
   EventEnabler:
+    AuctionSell: true
+    AuctionBuy: true
+    AuctionStartBid: true
     AuctionBid: true
-    AuctionWin: true
-    AuctionStart: true
     AuctionWinBid: true
   TitleConfig:
-##Time in seconds
+    ##Time in seconds
+    AuctionSell:
+      FadeInTime: 3
+      StayTime: 5
+      FadeOutTime: 3
+    AuctionBuy:
+      FadeInTime: 3
+      StayTime: 5
+      FadeOutTime: 3
+    AuctionStartBid:
+      FadeInTime: 3
+      StayTime: 5
+      FadeOutTime: 3
     AuctionBid:
-      FadeInTime: 3
-      StayTime: 5
-      FadeOutTime: 3
-    AuctionWin:
-      FadeInTime: 3
-      StayTime: 5
-      FadeOutTime: 3
-    AuctionStart:
       FadeInTime: 3
       StayTime: 5
       FadeOutTime: 3
@@ -75,17 +83,20 @@ Server:
 #If you dont know how to find this, go here: https://support.discordapp.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID-
 Discord:
   EventEnabler:
+    AuctionSell: true
+    AuctionBuy: true
+    AuctionStartBid: true
     AuctionBid: true
-    AuctionWin: true
-    AuctionStart: true
     AuctionWinBid: true
   Channels:
-    AuctionStartServer: '265889145124159490'
-    AuctionWinServer: '265889145124159490'
-    AuctionBidServer: '265889145124159490'
-    AuctionWinBidServer: '265889145124159490'
+    AuctionSell: '265889145124159490'
+    AuctionBuy: '265889145124159490'
+    AuctionStartBid: '265889145124159490'
+    AuctionBid: '265889145124159490'
+    AuctionWinBid: '265889145124159490'
   Messages:
-    AuctionBid: '%Player% has bid $%Money% on %Amount% %Item%'
-    AuctionWin: '%Player% has bought the auction of %Amount% %Item% %DisplayName% for $%Money%'
-    AuctionStart: '%Player% has started a %AuctionType% for %Amount% %Item% %DisplayName% for $%Money%'
-    AuctionWinBid: '%Player% has won the bid for %Amount% %Item% for $%Money%'
+    AuctionSell: '&e%Player% is selling %Amount% %Item% for $%Money%'
+    AuctionBuy: '&e%Player% has bought %Amount% %Item% (%DisplayName%) for $%Money%'
+    AuctionStartBid: '&e%Player% is auctioning %Amount% %DisplayName% for $%Money%'
+    AuctionBid: '&e%Player% has bid $%Money% on %Amount% %Item%'
+    AuctionWinBid: '&e%Player% has won the bid for %Amount% %Item% for $%Money%'
